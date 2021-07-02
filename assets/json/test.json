@@ -1,0 +1,23 @@
+{
+    "test": [{
+        "density": 2,
+        "friction": 0,
+        "bounce": 0,
+        "filter": {
+          "categoryBits": 1,
+          "maskBits": 65535
+        },
+        "shape": [0, 0, 80, 0, 80, 644, 0, 644]
+      },
+      {
+        "density": 2,
+        "friction": 0,
+        "bounce": 0,
+        "filter": {
+          "categoryBits": 1,
+          "maskBits": 65535
+        },
+        "shape": [80, 222, 200, 222, 200, 280, 80,280]
+      }
+    ]
+}
