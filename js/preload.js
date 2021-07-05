@@ -17,10 +17,10 @@ function preload() {
     'assets/images/background.png',
   );
   //game.load.spritesheet('hunter', 'assets/images/hunter.png', 34, 68);
-  //game.load.physics('shapeData', 'assets/json/objects.json');
+  game.load.physics('shapeData', 'assets/json/objects.json');
  // game.load.json('shapeData', 'assets/json/objects.json');
- // game.load.json('shapeData', 'assets/json/objects.json');
-  game.load.physics('shapeData', 'assets/json/test.json');
+  // game.load.json('shapeData', 'assets/json/objects.json');
+  //game.load.physics('shapeData', 'assets/json/test.json');
 }
 
 function loadStart() {

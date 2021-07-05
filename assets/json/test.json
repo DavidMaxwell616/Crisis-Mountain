@@ -1,23 +1,21 @@
 {
-    "test": [{
-        "density": 2,
-        "friction": 0,
-        "bounce": 0,
-        "filter": {
-          "categoryBits": 1,
-          "maskBits": 65535
-        },
-        "shape": [0, 0, 80, 0, 80, 644, 0, 644]
-      },
-      {
-        "density": 2,
-        "friction": 0,
-        "bounce": 0,
-        "filter": {
-          "categoryBits": 1,
-          "maskBits": 65535
-        },
-        "shape": [80, 222, 200, 222, 200, 280, 80,280]
-      }
-    ]
+  "mine": [
+    {"density": 2,
+    "friction": 0,
+    "bounce": 0,
+    "filter": {
+      "categoryBits": 1,
+      "maskBits": 65535
+    },
+    "shape": [ 133, 112, 113, 88, 115, 71, 118, 70, 174, 112, 168, 117, 154, 108, 159, 116 ]
+  } ,
+    {"density": 2,
+    "friction": 0,
+    "bounce": 0,
+    "filter": {
+      "categoryBits": 1,
+      "maskBits": 65535
+    },
+    "shape": [ 56, 93, 46, 76, 49, 72, 115, 71, 113, 87, 87, 108 ]
+  } ]
 }
