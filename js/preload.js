@@ -10,13 +10,16 @@ function preload() {
    loadText = game.add.text(32, 32, '', {
     fill: '#ffffff',
   });
- //this.load.image('arrow', 'assets/images/arrow.png');
  
+  this.load.image('splash1', 'assets/images/Crisis_Mountain_Title.png');
+  this.load.image('splash2', 'assets/images/Crisis_Mountain_Mountain.png');
+  this.load.image('maxxdaddy', 'assets/images/maxxdaddy.gif');
+
   game.load.image(
     'background',
     'assets/images/background.png',
   );
-  //game.load.spritesheet('hunter', 'assets/images/hunter.png', 34, 68);
+  game.load.spritesheet('miner', 'assets/images/miner.png', 30, 36);
   game.load.physics('shapeData', 'assets/json/objects.json');
  // game.load.json('shapeData', 'assets/json/objects.json');
   // game.load.json('shapeData', 'assets/json/objects.json');

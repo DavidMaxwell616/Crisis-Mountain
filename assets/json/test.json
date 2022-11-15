@@ -1,6 +1,6 @@
 {
   "mine": [
-    {"density": 2,
+    {
     "friction": 0,
     "bounce": 0,
     "filter": {
@@ -9,7 +9,7 @@
     },
     "shape": [ 133, 112, 113, 88, 115, 71, 118, 70, 174, 112, 168, 117, 154, 108, 159, 116 ]
   } ,
-    {"density": 2,
+    {
     "friction": 0,
     "bounce": 0,
     "filter": {
