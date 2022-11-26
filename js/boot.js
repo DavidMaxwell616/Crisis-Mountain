@@ -9,6 +9,8 @@ var shapeData;
 var isJumping = false;
 var isFalling = false;
 var miner_speed = 2;
+var mask;
+let startMaskY = 150;
 
 var arrows =new Array(4);
 var arrowStats = [

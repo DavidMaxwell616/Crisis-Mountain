@@ -2,6 +2,7 @@ var _scene;
 var ground;
 var letters;
 var jumped = false;
+
 function mainMenuCreate(game) {
   _scene = game;
   splash2 = game.add.image(0, 0, 'splash2');
@@ -13,6 +14,10 @@ function mainMenuCreate(game) {
   splash1.width = game.width;
   splash1.height = game.height;
   game.physics.box2d.gravity.y = 1500;
+  mask = game.add.graphics(0, 0);
+  mask.beginFill(0x00);
+  mask.drawRect(0, 100, game.width,240);
+  splash2.mask = mask;
 
   miner = game.add.sprite(20, 500, 'miner');
   miner.anchor.x=0.5;
@@ -33,7 +38,10 @@ function mainMenuCreate(game) {
 
 function mainMenuUpdate() {
   miner.body.x+=miner_speed;
-  if(miner.frame<7) miner.frame++;
+  mask.y--;
+  if(mask.y<-100)
+  mask.y=startMaskY;
+   if(miner.frame<7) miner.frame++;
     else miner.frame=0;
   if (miner.body.x>game.width-20){
     jumped=false;
@@ -51,6 +59,8 @@ function StartGame(){
 game.fireButton = null;
 splash1.visible = false;
 splash2.visible = false;
-ground.destroy();
+game.world.remove(ground);
+game.world.remove(letters);
 startGame = true;
+gameCreate(); 
 }
