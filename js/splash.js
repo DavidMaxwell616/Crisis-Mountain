@@ -1,7 +1,7 @@
 var _scene;
 var ground;
 var letters;
-var jumped = false;
+var jumping = false;
 
 function mainMenuCreate(game) {
   _scene = game;
@@ -30,28 +30,31 @@ function mainMenuCreate(game) {
   letters = new Phaser.Physics.Box2D.Body(game, null, 410, 505, 0.5);
   letters.setRectangle(500, 30, 0, 0, 0);
  
-  maxxdaddy = game.add.image(0, game.height * 0.93, 'maxxdaddy');
- game.input.onDown.addOnce(StartGame, this);
- game.fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+  maxxdaddy = game.add.image(game.width*.8, game.height * 0.93, 'maxxdaddy');
+  game.input.onDown.addOnce(StartGame, this);
+  game.fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 }
 
 
 function mainMenuUpdate() {
-  miner.body.x+=miner_speed;
+  miner.body.x = Math.round(miner.body.x)+miner_speed;
   mask.y--;
   if(mask.y<-100)
   mask.y=startMaskY;
-   if(miner.frame<7) miner.frame++;
-    else miner.frame=0;
+
+ if(miner.frame<7 && !jumping) miner.frame++;
   if (miner.body.x>game.width-20){
-    jumped=false;
     miner.body.x = 20;
     }
-  if(miner.body.x>125 && !jumped)
-     {
+  if(Math.abs(125-miner.body.x)<2 && !jumping ||
+   Math.abs(625-miner.body.x)<2 && !jumping )
+
+  {
       miner.body.velocity.y-=400;
-      jumped = true;
-    }
+      jumping = true;
+  }
+  else
+    jumping = false;
   if (game.fireButton.isDown) {StartGame();}
 }
 

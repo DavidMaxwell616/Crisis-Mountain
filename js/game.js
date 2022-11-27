@@ -20,14 +20,17 @@ function gameCreate(){
   game.physics.box2d.enable(background);
   background.body.static = true;
   background.body.clearFixtures();
-  //background.body.loadPolygon('shapeData','mine', background);
   var shapeData = game.cache.getPhysicsData('shapeData');
-  var newData = resizeShapes(shapeData, 1.43,'mine');
-  background.body.loadPolygon(newData,'mine', background);
-  //background.anchor.x=0.5;
+  console.log(game.cache);
+  background.body.loadPolygon(shapeData,'mine', background);
+  //background.body.SetPosition(100,100);
+  console.log(background.body);
+  // var newData = resizeShapes(shapeData, worldScale,'mine');
+  // background.body.loadPolygon(newData,'mine', background);
+  // //background.anchor.x=0.5;
   //background.anchor.y=0.5;
-  background.scale.x=1.43;
-  background.scale.y=1.43;
+  background.scale.x=worldScale;
+  background.scale.y=worldScale;
   game.physics.box2d.setBoundsToWorld();
   background.body.x+=background.width/2;
   background.body.y+=background.height/2;
@@ -41,25 +44,25 @@ function gameCreate(){
 function resizeShapes(data, scale, key)
 {
   newData = [];
-  for (var i = 0; i < data.length; i++) {
+  const x = data[key];
+  for (var i = 0; i < x.length; i++) {
     var vertices = [];
-    for (var j = 0; j < data[i].shape.length; j += 2) {
-      vertices[j] = data[i].shape[j] * scale;
-      vertices[j + 1] = data[i].shape[j + 1] * scale;
+    for (var j = 0; j < x[i].shape.length; j += 2) {
+      vertices[j] = x[i].shape[j] * scale;
+      vertices[j + 1] = x[i].shape[j + 1] * scale;
     }
-  
+    
     newData.push({
-      bounce : data[i].bounce,
-      density : data[i].density,
-      friction : data[i].friction,
-      filter : data[i].filter,
+      filter : x[i].filter,
       shape : vertices
     });
   }
   var item = {};
-item[key] = newData;
-  return item;
+item[key] = [];
+item[key]=newData;
+return item;
 }
+
 function update() {
   if(!startGame){
     mainMenuUpdate();

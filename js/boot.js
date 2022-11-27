@@ -11,6 +11,7 @@ var isFalling = false;
 var miner_speed = 2;
 var mask;
 let startMaskY = 150;
+const worldScale = 1.43;
 
 var arrows =new Array(4);
 var arrowStats = [
