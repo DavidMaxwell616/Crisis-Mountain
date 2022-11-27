@@ -62,6 +62,9 @@ function StartGame(){
 game.fireButton = null;
 splash1.visible = false;
 splash2.visible = false;
+ground.destroy();
+letters.destroy();
+maxxdaddy.destroy();
 game.world.remove(ground);
 game.world.remove(letters);
 startGame = true;
