@@ -21,7 +21,7 @@ function preload() {
   );
   game.load.spritesheet('miner', 'assets/images/miner.png', 30, 36);
   game.load.physics('shapeData', 'assets/json/objects.json');
- // game.load.json('shapeData', 'assets/json/objects.json');
+  // game.load.json('shapeData', 'assets/json/objects.json');
   // game.load.json('shapeData', 'assets/json/objects.json');
   //game.load.physics('shapeData', 'assets/json/test.json');
 }
